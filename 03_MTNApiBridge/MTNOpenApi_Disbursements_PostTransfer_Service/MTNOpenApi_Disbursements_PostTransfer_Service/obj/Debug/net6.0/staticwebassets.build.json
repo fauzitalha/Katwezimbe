@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "D9t/xMo2Y9cukyORmwU2vAqu36H8gtI8lQz85n2O5jo=",
+  "Source": "MTNOpenApi_Disbursements_PostTransfer_Service",
+  "BasePath": "_content/MTNOpenApi_Disbursements_PostTransfer_Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

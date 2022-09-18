@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTNOpenApi_Disbursements_PostTransfer_Service", "MTNOpenApi_Disbursements_PostTransfer_Service\MTNOpenApi_Disbursements_PostTransfer_Service.csproj", "{3CF0ECC2-A33D-4F8F-99CC-AED0E1A16FC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CF0ECC2-A33D-4F8F-99CC-AED0E1A16FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF0ECC2-A33D-4F8F-99CC-AED0E1A16FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF0ECC2-A33D-4F8F-99CC-AED0E1A16FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF0ECC2-A33D-4F8F-99CC-AED0E1A16FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EB15A85-3DFE-40D4-8C7C-F7B911D26EC3}
+	EndGlobalSection
+EndGlobal

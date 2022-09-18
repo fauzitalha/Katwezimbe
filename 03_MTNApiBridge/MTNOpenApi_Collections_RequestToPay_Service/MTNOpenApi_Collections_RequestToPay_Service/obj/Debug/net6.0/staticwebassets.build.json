@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "egMGQeKQSL5jBi6iGbABIg/2fg0RqfjLvKJSqrnWj14=",
+  "Source": "MTNOpenApi_Collections_RequestToPay_Service",
+  "BasePath": "_content/MTNOpenApi_Collections_RequestToPay_Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
