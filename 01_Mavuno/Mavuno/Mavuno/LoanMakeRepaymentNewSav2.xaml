@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.LoanMakeRepaymentNewSav2"
+             BackgroundColor="#EEEEEE">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Loan Repayment"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame Margin="10, 10, 10, 10" Padding="5" HasShadow="False" BorderColor="#EEEEEE">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Row 01 -->
+                        <StackLayout Grid.Column="0" Grid.Row="0">
+                            <Label Text="Savings Account No:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblSvgAccountNum"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 02 -->
+                        <StackLayout Grid.Column="0" Grid.Row="1">
+                            <Label Text="Loan Account No:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblLoanAcctNum"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 03 -->
+                        <StackLayout Grid.Column="0" Grid.Row="2">
+                            <Label Text="Amount to Repay:" FontAttributes="Bold" />
+                            <Entry x:Name="txtAmountRepay"
+                                   Keyboard="Numeric">
+                                <Entry.Behaviors>
+                                    <fontawesome:NumericValidationBehavior />
+                                </Entry.Behaviors>
+                            </Entry>
+                        </StackLayout>
+
+                        <!-- Row 04 -->
+                        <StackLayout Grid.Column="0" Grid.Row="3">
+                            <Label Text="Narration:" FontAttributes="Bold" />
+                            <Editor x:Name="txtNarration" 
+                                    Keyboard="Plain" 
+                                    AutoSize="TextChanges" 
+                                    MaxLength="255" />
+                        </StackLayout>
+
+                        <!-- Row 05 -->
+                        <StackLayout Grid.Column="0" Grid.Row="4">
+                            <Button Text="Submit"
+                                    x:Name="btnSubmit"
+                                    Clicked="BtnSubmit_Clicked" />
+                        </StackLayout>
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+</ContentPage>

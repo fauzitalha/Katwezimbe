@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.LoanAcctBalance">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Acct"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Margin="10, 10, 10, 0">
+
+                <Label Text="Account:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblLoanAcctNum" 
+                           FontSize="Body" HorizontalOptions="End" />
+                </Frame>
+
+                <Label Text="Principal/Amount Disbursed:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                       BorderColor="#EEEEEE"
+                       Padding="7"
+                       HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblAmtDisbursed"
+                           FontSize="Body" HorizontalOptions="End" />
+                </Frame>
+
+                <Label Text="Outstanding Principal:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                       BorderColor="#EEEEEE"
+                       Padding="7"
+                       HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblOutPrinc"
+                           FontSize="Body" HorizontalOptions="End" />
+                </Frame>
+
+                <Label Text="Outstanding Interest:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                       BorderColor="#EEEEEE"
+                       Padding="7"
+                       HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblOutInt"
+                           FontSize="Body" HorizontalOptions="End" />
+                </Frame>
+
+                <Label Text="Outstanding Penalties:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                       BorderColor="#EEEEEE"
+                       Padding="7"
+                       HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblOutPen"
+                           FontSize="Body" HorizontalOptions="End" />
+                </Frame>
+
+                <Label Text="Total Outstanding Loan Balance:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                       BorderColor="#EEEEEE"
+                       Padding="7"
+                       HasShadow="False">
+
+                    <Label Text="" 
+                           x:Name="lblOutTot"
+                           FontSize="Large" HorizontalOptions="End" />
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

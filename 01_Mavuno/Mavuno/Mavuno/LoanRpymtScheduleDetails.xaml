@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.LoanRpymtScheduleDetails">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Acct"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Margin="10, 10, 10, 0">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Row 01 -->
+                    <StackLayout Grid.Column="0" Grid.Row="0">
+                        <Label Text="Installment Num:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstNum"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0">
+                        <Label Text="Days in Installment:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstDays"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 02 -->
+                    <StackLayout Grid.Column="0" Grid.Row="1">
+                        <Label Text="Date of Installment:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstDate"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="1">
+                        <Label Text="Installment Payment Date:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPymtDate"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 03 -->
+                    <StackLayout Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                        <Label Text="Total Installment Due:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstDue"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 04 -->
+                    <StackLayout Grid.Column="0" Grid.Row="3">
+                        <Label Text="Principal Portion:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPrincPort"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="3">
+                        <Label Text="Interest Portion:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstIntPort"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 05 -->
+                    <StackLayout Grid.Column="0" Grid.Row="4">
+                        <Label Text="Fees Portion:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstFeesPort"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="4">
+                        <Label Text="Penalty Portion:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPenPort"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 06 -->
+                    <StackLayout Grid.Column="0" Grid.Row="5">
+                        <Label Text="Inst. Amount Paid In Advance:" FontSize="Micro" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPaidInAdvance"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="5">
+                        <Label Text="Inst. Amount Paid Late:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPaidLate"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 07 -->
+                    <StackLayout Grid.Column="0" Grid.Row="6">
+                        <Label Text="Total Installment Paid:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPaid"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="6">
+                        <Label Text="Percentage Paid (%):" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstPercentPaid"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 08 -->
+                    <StackLayout Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2">
+                        <Label Text="Total Outstanding Installment:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstOut"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Row 09 -->
+                    <StackLayout Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">
+                        <Label Text="Installment Status:" FontAttributes="Bold" />
+                        <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                            <Label Text="" x:Name="lblInstStatus"/>
+                        </Frame>
+                    </StackLayout>
+
+
+                </Grid>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+</ContentPage>

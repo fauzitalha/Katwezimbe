@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mavuno.AddNewWallet"
+             Title="Add Wallet"
+             Padding="10">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="10, 10, 10, 0">
+
+            <!-- Screen Elements -->
+            <Entry Placeholder="Application Reference"
+               x:Name="txtApplnRef"/>
+
+            <Entry Placeholder="Activation Code"
+               x:Name="txtActivationCode"/>
+    
+            <Button Text="Inquire"
+                x:Name="btnInquireRegDetails"
+                Clicked="BtnInquireRegDetails_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.SetWalletPin"
+             Title="Set Wallet Pin"
+             Padding="10">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0">
+                <Label Text="Organization:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblOrgName"/>
+                </Frame>
+
+                <!--<Label Text="Wallet ID:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblWalletId"/>
+                </Frame>-->
+
+                <Label Text="Phone Number:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblPhoneNumber"/>
+                </Frame>
+
+                <Label Text="Enter Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtPin1"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">    
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Re-Enter Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtPin2"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Button Text="Save Wallet Pin"
+                        x:Name="btnInquireRegDetails"
+                        Clicked="BtnSavePin_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

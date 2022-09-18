@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.SvgsAcctWithdraw"
+             BackgroundColor="#EEEEEE">
+
+    
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Withdraws"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Margin="10, 10, 10, 10" Padding="5" HasShadow="False" BorderColor="#EEEEEE">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackLayout Grid.Column="0" Grid.Row="0">
+                        <Frame ClassId="NewRequest" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#A569BD" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Frame.Content>
+                                <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                    <Image>
+                                        <Image.Source>
+                                            <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.Plus}" />
+                                        </Image.Source>
+                                    </Image>
+                                </StackLayout>
+                            </Frame.Content>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRequestFrameTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Label Text="New Withdraw Request" 
+                                    FontSize="Micro" 
+                                    HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0">
+                        <Frame ClassId="Previous" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#3498DB" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Frame.Content>
+                                <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                    <Image>
+                                        <Image.Source>
+                                            <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.History}" />
+                                        </Image.Source>
+                                    </Image>
+                                </StackLayout>
+                            </Frame.Content>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRequestFrameTapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Label Text="Previous Requests" 
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>

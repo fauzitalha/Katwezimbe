@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.SvgsAcctStmtRequestNew"
+             BackgroundColor="#EEEEEE">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Statement Request"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Margin="10, 10, 10, 10" Padding="5" HasShadow="False" BorderColor="#EEEEEE">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Row 01 -->
+                    <StackLayout Grid.Column="0" Grid.Row="0">
+                        <Label Text="Start Date:" FontAttributes="Bold" />
+                        <DatePicker x:Name="startDatePicker"
+                                    Format="D" />
+                    </StackLayout>
+
+                    <!-- Row 02 -->
+                    <StackLayout Grid.Column="0" Grid.Row="1">
+                        <Label Text="End Date:" FontAttributes="Bold" />
+                        <DatePicker x:Name="endDatePicker"
+                                        Format="D" />
+                    </StackLayout>
+
+                    <!-- Row 03 -->
+                    <StackLayout Grid.Column="0" Grid.Row="2">
+                        <Label Text="Delivery Email Address:" FontAttributes="Bold" />
+                        <Entry x:Name="txtEmail"
+                                   Keyboard="Email" />
+                    </StackLayout>
+
+                    <!-- Row 04 -->
+                    <StackLayout Grid.Column="0" Grid.Row="3">
+                        <Button Text="Submit Request"
+                                    x:Name="btnLogin"
+                                    Clicked="BtnSubmitRequest_Clicked"/>
+                    </StackLayout>
+
+                </Grid>
+
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+
+</ContentPage>

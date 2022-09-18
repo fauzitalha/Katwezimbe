@@ -1,0 +1,20 @@
+﻿Alternatively, if you are using the MVVM pattern and would like to Bind the tap to an ICommand in the ViewModel, that can be achieved like this:
+
+<StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#313FA0">
+    <StackLayout.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding TapCommand}"/>
+    </StackLayout.GestureRecognizers>
+</StackLayout>
+
+
+
+In your ViewModel you would have:
+
+private ICommand _tapCommand;
+pubic ICommand TapCommand => (_tapCommand ?? _tapCommand = new Command(OnTapped));
+
+void OnTapped() 
+{
+    // Do stuff
+}
+

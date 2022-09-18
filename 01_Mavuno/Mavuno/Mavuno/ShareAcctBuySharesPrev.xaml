@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.ShareAcctBuySharesPrev"
+             BackgroundColor="#EEEEEE">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Previous Buy Shares Requests"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+
+        <Frame Margin="10, 10, 10, 10" Padding="5" HasShadow="False" BorderColor="#EEEEEE">
+            <ListView x:Name="prevBsrRqstListView"
+                      HasUnevenRows="true"
+                      ItemSelected="OnListViewItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Grid.Column="0" Grid.Row="0" 
+                                       Text="{Binding SHARES_APPLN_REF}"
+                                       FontSize="Small"
+                                       HorizontalOptions="Start" />
+
+                                <Label Grid.Column="0" Grid.Row="1" 
+                                       Text="{Binding APPLN_SUBMISSION_DATE}"
+                                       FontSize="Micro"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="End" />
+
+                                <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                                       Text="{Binding SHARES_REQUESTED}"
+                                       FontSize="Small"
+                                       HorizontalOptions="End" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Frame>
+
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.ReportIssue">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0">
+
+                <Label Text="Organization:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblOrgName"/>
+                </Frame>
+
+                <!--<Label Text="Wallet ID:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblWalletId"/>
+                </Frame>-->
+
+                <Label Text="Phone Number:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblPhoneNumber"/>
+                </Frame>
+
+                <Label Text="Enter Phone:" FontAttributes="Bold" />
+                <Entry x:Name="txtEnterredPhone"
+                       Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Enter Email:" FontAttributes="Bold" />
+                <Entry x:Name="txtEnterredEmail" />
+
+                <Label Text="Enter Subject:" FontAttributes="Bold" />
+                <Entry x:Name="txtEnterredSubject" />
+
+                <Label Text="Describe the Issue:" FontAttributes="Bold" />
+                <Editor x:Name="txtEnterredIssueDesc" 
+                        Keyboard="Plain" 
+                        AutoSize="TextChanges" 
+                        MaxLength="255" />
+
+                <Button Text="Report Issue"
+                        x:Name="btnReportIssue"
+                        Clicked="ReportIssue_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+
+</ContentPage>

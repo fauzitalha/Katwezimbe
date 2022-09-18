@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.MoreChangePassword">
+
+    <NavigationPage.TitleView>
+        <Label Text="Change Wallet Access Pin"
+               FontSize="Large"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0">
+                <Label Text="Reason for change:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblChangeReason"/>
+                </Frame>
+
+                <Label Text="Organization:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblOrgName"/>
+                </Frame>
+
+                <!--<Label Text="Wallet ID:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblWalletId"/>
+                </Frame>-->
+
+                <Label Text="Phone Number:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblPhoneNumber"/>
+                </Frame>
+
+                <Label Text="Previous Access Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtPrevAccessPin"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">
+                    <Entry.Behaviors>
+                        <fontawesome:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Enter New Access Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtAccessPin1"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">
+                    <Entry.Behaviors>
+                        <fontawesome:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label Text="Re-Enter New Access Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtAccessPin2"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">
+                    <Entry.Behaviors>
+                        <fontawesome:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Button Text="Save Access Pin"
+                        x:Name="btnSaveAccessPin"
+                        Clicked="SaveAccessPin_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.SvgsAcctDepositPrevInfo"
+             BackgroundColor="#EEEEEE">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Deposit Request Details"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame Margin="10, 10, 10, 10" Padding="10" HasShadow="False" BorderColor="#EEEEEE">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <!-- Row 01 -->
+                        <StackLayout Grid.Column="0" Grid.Row="0">
+                            <Label Text="Request Ref:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblRqstRef"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 02 -->
+                        <StackLayout Grid.Column="0" Grid.Row="1">
+                            <Label Text="Request Date:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblRqstDate"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 03 -->
+                        <StackLayout Grid.Column="0" Grid.Row="2">
+                            <Label Text="Channel/Method:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblChannelMethod"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 04 -->
+                        <StackLayout Grid.Column="0" Grid.Row="3">
+                            <Label Text="Deposit made via:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblDpstMadeVia"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 05 -->
+                        <StackLayout Grid.Column="0" Grid.Row="4">
+                            <Label Text="Amount Deposited:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblAmtDeposited"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 06 -->
+                        <StackLayout Grid.Column="0" Grid.Row="5">
+                            <Label Text="Deposit Reason:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblReason"/>
+                            </Frame>
+                        </StackLayout>
+
+
+                        <!-- Row 07 -->
+                        <StackLayout Grid.Column="0" Grid.Row="6">
+                            <Label Text="Deposit Status:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblRqstStatus"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Row 08 -->
+                        <StackLayout Grid.Column="0" Grid.Row="7">
+                            <Label Text="Additional Remarks:" FontAttributes="Bold" />
+                            <Frame BackgroundColor="#EEEEEE"
+                               BorderColor="#EEEEEE"
+                               Padding="7"
+                               HasShadow="False">
+
+                                <Label Text="" x:Name="lblAddtRmks"/>
+                            </Frame>
+                        </StackLayout>
+
+
+
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+
+
+
+</ContentPage>

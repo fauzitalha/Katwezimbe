@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             NavigationPage.HasBackButton="False"
+             x:Class="Mavuno.HomePage">
+
+
+    <NavigationPage.TitleView>
+        <Label Text="Home"
+               FontAttributes="Bold"
+               FontSize="Large"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ReportIssueToolBarItem"
+                     Clicked="ReportIssueToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeRegular}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.Futbol}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem x:Name="ReportIssueToolBarItem2"
+                     Clicked="ReportIssueToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeBrands}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.Accusoft}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem x:Name="ReportIssueToolBarItem3"
+                     Clicked="ReportIssueToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.Biohazard}"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Label Text="&#xf26e;"
+                   FontFamily="{StaticResource FontAwesomeBrands}"
+                   HorizontalOptions="Center"
+                   x:Name="lbl1"
+                   FontSize="Large"/>
+
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.Accusoft}"
+                   FontFamily="{StaticResource FontAwesomeBrands}"
+                   HorizontalOptions="Center"
+                   x:Name="lbl2"/>
+
+            <Label Text="&#xf95a;"
+                   FontFamily="{StaticResource FontAwesomeSolid}"
+                   HorizontalOptions="Center"
+                   x:Name="lbl3"/>
+
+            <Label Text="&#xf09d;"
+                   FontFamily="{StaticResource FontAwesomeSolid}"
+                   HorizontalOptions="Center"
+                   x:Name="lbl4"/>
+
+            <Label Text="&#xf385;"
+                   FontFamily="{StaticResource FontAwesomeBrands}"
+                   HorizontalOptions="Center"
+                   x:Name="lbl5"/>
+
+
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.Biohazard}"
+                   FontFamily="{StaticResource FontAwesomeSolid}"
+                   HorizontalOptions="Center"/>
+
+
+
+            <Label Text="&#xf2bd;"
+                   FontFamily="{StaticResource FontAwesomeRegular}"
+                   HorizontalOptions="Center"/>
+
+
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.AddressCard}"
+                   FontFamily="{StaticResource FontAwesomeRegular}"
+                   HorizontalOptions="Center"/>
+
+
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.Futbol}"
+                   FontFamily="{StaticResource FontAwesomeRegular}"
+                   HorizontalOptions="Center"/>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

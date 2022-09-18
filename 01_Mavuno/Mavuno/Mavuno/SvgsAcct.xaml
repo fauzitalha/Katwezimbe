@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.SvgsAcct">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitleView" 
+               Text="Acct"
+               FontSize="Body"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0">
+                <Label Text="Savings Acct Num:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblSvgAcctNum"/>
+                </Frame>
+
+                <Label Text="Currency:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblCurrency"/>
+                </Frame>
+
+                <Label Text="Savings Product:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblProduct"/>
+                </Frame>
+
+                
+                <Label Text="To make transaction, choose from the options below;" 
+                       Margin="0,15,0,0"
+                       FontAttributes="Bold" />
+                
+                <Frame Padding="5" HasShadow="False" BorderColor="#EEEEEE">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        
+                        <!-- ROW 01 -->
+                        <StackLayout Grid.Column="0" Grid.Row="0">
+                            <Frame ClassId="AccountDetails" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#A569BD" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.Info}" />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Account Details" 
+                                    MaxLines="1" 
+                                    LineBreakMode="TailTruncation"
+                                    FontSize="Micro" 
+                                    HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Grid.Row="0">
+                            <Frame ClassId="Balance" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#3498DB" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.MoneyBillAlt}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Balance" 
+                                   MaxLines="1" 
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2" Grid.Row="0">
+                            <Frame ClassId="MiniStmt" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#5D6D7E" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.Receipt}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Mini Stmt" 
+                                   MaxLines="1" 
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="3" Grid.Row="0">
+                            <Frame ClassId="StmtRequest" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#784212" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.Scroll}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Stmt Request" 
+                                   MaxLines="1" 
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        
+                        <!-- ROW 02 -->
+                        <StackLayout Grid.Column="0" Grid.Row="1">
+                            <Frame ClassId="Deposit" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#117A65" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.AngleUp}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Deposit" 
+                                    MaxLines="1" 
+                                    LineBreakMode="TailTruncation"
+                                    FontSize="Micro" 
+                                    HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Grid.Row="1">
+                            <Frame ClassId="Withdrawal" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#C0392B" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.AngleDown}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Withdrawal" 
+                                   MaxLines="1" 
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2" Grid.Row="1">
+                            <Frame ClassId="Transfer" WidthRequest="70" HeightRequest="70" CornerRadius="35" HasShadow="False" BackgroundColor="#D4AC0D" Padding="0" Margin="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Frame.Content>
+                                    <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="0">
+                                        <Image>
+                                            <Image.Source>
+                                                <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.ExchangeAlt}"
+                                                         />
+                                            </Image.Source>
+                                        </Image>
+                                    </StackLayout>
+                                </Frame.Content>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSavingsOpsFrameTapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                            <Label Text="Transfer" 
+                                   MaxLines="1" 
+                                   LineBreakMode="TailTruncation"
+                                   FontSize="Micro" 
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+
+                        
+                        
+                    </Grid>
+                </Frame>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

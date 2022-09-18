@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontawesome="clr-namespace:Mavuno.core"
+             NavigationPage.HasBackButton="False"
+             x:Class="Mavuno.HomePage">
+
+    
+    <NavigationPage.TitleView>
+        <Label Text="Home"
+               FontSize="Large"
+               TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SignOutToolBarItem"
+                     Clicked="SignOutToolBarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"
+                                 Glyph="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+
+            <Frame Padding="5" HasShadow="False" BorderColor="#566573">
+                <Frame.Content>
+                    <StackLayout Spacing="1">
+                        
+                        <Label x:Name="lblCustName" 
+                               Text="FirstName LastName" 
+                               TextColor="#566573"
+                               MaxLines="1" 
+                               LineBreakMode="TailTruncation" 
+                               FontSize="Medium" 
+                               HorizontalOptions="CenterAndExpand"/>
+
+                        <Label x:Name="lblOrgName"
+                               Text="Organization" 
+                               TextColor="#566573"
+                               MaxLines="1" 
+                               LineBreakMode="TailTruncation" 
+                               FontSize="Micro" 
+                               HorizontalOptions="CenterAndExpand"/>
+
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+                    <Frame ClassId="MySavingsFrame" CornerRadius="7"  HeightRequest="150" HasShadow="False" BackgroundColor="#117A65" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.MoneyBillAlt}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="My Savings" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+                    <Frame ClassId="MyLoansFrame" CornerRadius="7"  HeightRequest="150" HasShadow="False" BackgroundColor="#76448A" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.HandHoldingUsd}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="My Loans" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="2">
+                    <Frame ClassId="MySharesFrame" CornerRadius="7" HeightRequest="150" HasShadow="False" BackgroundColor="#21618C" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.ChartPie}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="My Shares" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="0" Grid.Row="1">
+                    <Frame ClassId="MyDetailsFrame" CornerRadius="7"  HeightRequest="150" HasShadow="False" BackgroundColor="#7B241C" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.User}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="My Details" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" Grid.Row="1">
+                    <Frame ClassId="GetHelpFrame" CornerRadius="7"  HeightRequest="150" HasShadow="False" BackgroundColor="#283747" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.Headset}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="Get Help" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="2" Grid.Row="1">
+                    <Frame ClassId="MoreFrame" CornerRadius="7"  HeightRequest="150" HasShadow="False" BackgroundColor="#566573" Padding="5,15">
+                        <Frame.Content>
+                            <StackLayout Spacing="10" VerticalOptions="CenterAndExpand" Padding="10">
+
+                                <Image>
+                                    <Image.Source>
+                                        <FontImageSource Color="White"
+                                                         FontFamily="{StaticResource FontAwesomeSolid}"
+                                                         Glyph="{x:Static fontawesome:FontAwesomeIcons.AngleDoubleRight}"
+                                                         Size="40" />
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="More" 
+                                       MaxLines="1" 
+                                       LineBreakMode="TailTruncation" 
+                                       FontAttributes="Bold" 
+                                       FontSize="Small" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Frame.Content>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHomeFrameTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

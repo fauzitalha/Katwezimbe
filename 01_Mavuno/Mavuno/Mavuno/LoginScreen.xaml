@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Mavuno.core"
+             x:Class="Mavuno.LoginScreen"
+             Title="Log In"
+             Padding="10">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Report Issue"
+                     x:Name="ReportIssueToolBarItem"
+                     Clicked="ReportIssueToolBarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0">
+                <Label Text="Organization:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblOrgName"/>
+                </Frame>
+
+                <!--<Label Text="Wallet ID:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblWalletId"/>
+                </Frame>-->
+
+                <Label Text="Phone Number:" FontAttributes="Bold" />
+                <Frame BackgroundColor="#EEEEEE"
+                   BorderColor="#EEEEEE"
+                   CornerRadius="7"
+                   Padding="7"
+                   HasShadow="False">
+
+                    <Label Text="" x:Name="lblPhoneNumber"/>
+                </Frame>
+
+                <Label Text="Enter Access Pin:" FontAttributes="Bold" />
+                <Entry x:Name="txtAccessPin"
+                       IsPassword="true"
+                       Keyboard="Numeric"
+                       MaxLength="5">
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Button Text="Log In"
+                        x:Name="btnLogin"
+                        Clicked="BtnLogin_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
