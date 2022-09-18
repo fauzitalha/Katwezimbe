@@ -1,0 +1,43 @@
+// ... SUCCESS
+Array
+(
+    [resourceId] => 9
+    [changes] => Array
+        (
+        )
+
+    [resourceIdentifier] => 9
+)
+
+
+// ... FAILURE
+Array
+(
+    [developerMessage] => The requested resource is not available.
+    [httpStatusCode] => 404
+    [defaultUserMessage] => The requested resource is not available.
+    [userMessageGlobalisationCode] => error.msg.resource.not.found
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => Client with identifier 2349 does not exist
+                    [defaultUserMessage] => Client with identifier 2349 does not exist
+                    [userMessageGlobalisationCode] => error.msg.client.id.invalid
+                    [parameterName] => id
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 2349
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+

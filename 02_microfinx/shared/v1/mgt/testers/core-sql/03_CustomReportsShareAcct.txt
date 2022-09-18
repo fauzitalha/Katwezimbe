@@ -1,0 +1,101 @@
+mysql> desc m_share_account;
+SELECT m_share_account.id
+      ,m_share_account.account_no
+      ,m_share_account.currency_code
+	  ,m_share_account.client_id
+	  ,m_share_account.product_id 
+	  ,m_share_product.name
+	  ,m_share_product.short_name
+	  ,m_share_account.status_enum
+	  ,( select enum_value from r_enum_value WHERE enum_name='status_enum') ACCT_STATUS
+FROM m_share_account, m_share_product
+WHERE m_share_account.product_id=m_share_product.id
+  AND m_share_account.status_enum='300'
+  AND m_share_account.client_id=${client_id}
+https://127.0.0.1:8443/fineract-provider/api/v1/runreports/GetCustSharesAccounts?R_client_id=9&tenantIdentifier=default&pretty=true
++--------------------------------------+---------------+------+-----+---------+----------------+
+| Field                                | Type          | Null | Key | Default | Extra          |
++--------------------------------------+---------------+------+-----+---------+----------------+
+| id                                   | bigint(20)    | NO   | PRI | NULL    | auto_increment |
+| account_no                           | varchar(50)   | NO   |     | NULL    |                |
+| product_id                           | bigint(20)    | NO   | MUL | NULL    |                |
+| client_id                            | bigint(20)    | NO   | MUL | NULL    |                |
+| external_id                          | varchar(100)  | YES  |     | NULL    |                |
+| status_enum                          | smallint(5)   | NO   |     | 300     |                |
+| total_approved_shares                | bigint(20)    | YES  |     | NULL    |                |
+| total_pending_shares                 | bigint(20)    | YES  |     | NULL    |                |
+| submitted_date                       | date          | NO   |     | NULL    |                |
+| submitted_userid                     | bigint(20)    | YES  | MUL | NULL    |                |
+| approved_date                        | date          | YES  |     | NULL    |                |
+| approved_userid                      | bigint(20)    | YES  | MUL | NULL    |                |
+| rejected_date                        | date          | YES  |     | NULL    |                |
+| rejected_userid                      | bigint(20)    | YES  | MUL | NULL    |                |
+| activated_date                       | date          | YES  |     | NULL    |                |
+| activated_userid                     | bigint(20)    | YES  | MUL | NULL    |                |
+| closed_date                          | date          | YES  |     | NULL    |                |
+| closed_userid                        | bigint(20)    | YES  | MUL | NULL    |                |
+| currency_code                        | varchar(3)    | NO   |     | NULL    |                |
+| currency_digits                      | smallint(5)   | NO   |     | NULL    |                |
+| currency_multiplesof                 | smallint(5)   | YES  |     | NULL    |                |
+| savings_account_id                   | bigint(20)    | NO   | MUL | NULL    |                |
+| minimum_active_period_frequency      | decimal(19,6) | YES  |     | NULL    |                |
+| minimum_active_period_frequency_enum | smallint(5)   | YES  |     | NULL    |                |
+| lockin_period_frequency              | decimal(19,6) | YES  |     | NULL    |                |
+| lockin_period_frequency_enum         | smallint(5)   | YES  |     | NULL    |                |
+| allow_dividends_inactive_clients     | smallint(1)   | YES  |     | 0       |                |
+| created_date                         | datetime      | YES  |     | NULL    |                |
+| lastmodifiedby_id                    | bigint(20)    | YES  | MUL | NULL    |                |
+| lastmodified_date                    | datetime      | YES  |     | NULL    |                |
++--------------------------------------+---------------+------+-----+---------+----------------+
+30 rows in set (0.00 sec)
+
+
+mysql> desc m_share_product;
++--------------------------------------+---------------+------+-----+---------+----------------+
+| Field                                | Type          | Null | Key | Default | Extra          |
++--------------------------------------+---------------+------+-----+---------+----------------+
+| id                                   | bigint(20)    | NO   | PRI | NULL    | auto_increment |
+| name                                 | varchar(200)  | NO   | UNI | NULL    |                |
+| short_name                           | varchar(4)    | NO   |     | NULL    |                |
+| external_id                          | varchar(100)  | YES  |     | NULL    |                |
+| description                          | varchar(500)  | NO   |     | NULL    |                |
+| start_date                           | datetime      | YES  |     | NULL    |                |
+| end_date                             | datetime      | YES  |     | NULL    |                |
+| currency_code                        | varchar(3)    | NO   |     | NULL    |                |
+| currency_digits                      | smallint(5)   | NO   |     | NULL    |                |
+| currency_multiplesof                 | smallint(5)   | YES  |     | NULL    |                |
+| total_shares                         | bigint(20)    | NO   |     | NULL    |                |
+| issued_shares                        | bigint(20)    | YES  |     | NULL    |                |
+| totalsubscribed_shares               | bigint(20)    | YES  |     | NULL    |                |
+| unit_price                           | decimal(10,2) | NO   |     | NULL    |                |
+| capital_amount                       | decimal(20,2) | NO   |     | NULL    |                |
+| minimum_client_shares                | bigint(20)    | YES  |     | NULL    |                |
+| nominal_client_shares                | bigint(20)    | NO   |     | NULL    |                |
+| maximum_client_shares                | bigint(20)    | YES  |     | NULL    |                |
+| minimum_active_period_frequency      | decimal(19,6) | YES  |     | NULL    |                |
+| minimum_active_period_frequency_enum | smallint(5)   | YES  |     | NULL    |                |
+| lockin_period_frequency              | decimal(19,6) | YES  |     | NULL    |                |
+| lockin_period_frequency_enum         | smallint(5)   | YES  |     | NULL    |                |
+| allow_dividends_inactive_clients     | smallint(1)   | YES  |     | 0       |                |
+| createdby_id                         | bigint(20)    | YES  | MUL | NULL    |                |
+| created_date                         | datetime      | YES  |     | NULL    |                |
+| lastmodifiedby_id                    | bigint(20)    | YES  | MUL | NULL    |                |
+| lastmodified_date                    | datetime      | YES  |     | NULL    |                |
+| accounting_type                      | smallint(2)   | NO   |     | NULL    |                |
++--------------------------------------+---------------+------+-----+---------+----------------+
+28 rows in set (0.00 sec)
+
+
+mysql> desc r_enum_value;
++-----------------------+--------------+------+-----+---------+-------+
+| Field                 | Type         | Null | Key | Default | Extra |
++-----------------------+--------------+------+-----+---------+-------+
+| enum_name             | varchar(100) | NO   | PRI | NULL    |       |
+| enum_id               | int(11)      | NO   | PRI | NULL    |       |
+| enum_message_property | varchar(100) | NO   |     | NULL    |       |
+| enum_value            | varchar(100) | NO   |     | NULL    |       |
+| enum_type             | tinyint(1)   | NO   |     | NULL    |       |
++-----------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+

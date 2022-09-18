@@ -1,0 +1,73 @@
+Array
+(
+    [officeId] => 1
+    [clientId] => 1
+    [savingsId] => 3
+    [resourceId] => 3
+    [changes] => Array
+        (
+            [status] => Array
+                (
+                    [id] => 200
+                    [code] => savingsAccountStatusType.approved
+                    [value] => Approved
+                    [submittedAndPendingApproval] => 
+                    [approved] => 1
+                    [rejected] => 
+                    [withdrawnByApplicant] => 
+                    [active] => 
+                    [closed] => 
+                    [prematureClosed] => 
+                    [transferInProgress] => 
+                    [transferOnHold] => 
+                    [matured] => 
+                )
+
+            [locale] => en
+            [dateFormat] => dd MMMM yyyy
+            [approvedOnDate] => 20 April 2019
+        )
+
+)
+
+
+
+FAILURE_MESSAGE
+===================================================================================
+Array
+(
+    [developerMessage] => The request was invalid. This typically will happen due to validation errors which are provided.
+    [httpStatusCode] => 400
+    [defaultUserMessage] => Validation errors exist.
+    [userMessageGlobalisationCode] => validation.msg.validation.errors.exist
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => Failed data validation due to: not.in.submittedandpendingapproval.state.
+                    [defaultUserMessage] => Failed data validation due to: not.in.submittedandpendingapproval.state.
+                    [userMessageGlobalisationCode] => validation.msg.savingsaccount.approval.not.in.submittedandpendingapproval.state
+                    [parameterName] => approvedOnDate
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 
+                                )
+
+                            [1] => Array
+                                (
+                                    [value] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

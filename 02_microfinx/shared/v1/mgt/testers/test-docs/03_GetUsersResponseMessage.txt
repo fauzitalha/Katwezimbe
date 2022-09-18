@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "username": "mifos",
+    "officeId": 1,
+    "officeName": "NANSANA SAVINGS",
+    "firstname": "App",
+    "lastname": "Administrator",
+    "email": "demomfi@mifos.org",
+    "passwordNeverExpires": false,
+    "selectedRoles": [
+      {
+        "id": 1,
+        "name": "Super user",
+        "description": "This role provides all application permissions.",
+        "disabled": false
+      }
+    ],
+    "isSelfServiceUser": false
+  },
+  {
+    "id": 8,
+    "username": "root",
+    "officeId": 1,
+    "officeName": "NANSANA SAVINGS",
+    "firstname": "root",
+    "lastname": "root",
+    "email": "root@wvi.org",
+    "passwordNeverExpires": false,
+    "selectedRoles": [
+      {
+        "id": 1,
+        "name": "Super user",
+        "description": "This role provides all application permissions.",
+        "disabled": false
+      }
+    ],
+    "isSelfServiceUser": false
+  },
+  {
+    "id": 2,
+    "username": "system",
+    "officeId": 1,
+    "officeName": "NANSANA SAVINGS",
+    "firstname": "system",
+    "lastname": "system",
+    "email": "system@wvi.org",
+    "passwordNeverExpires": false,
+    "selectedRoles": [
+      {
+        "id": 1,
+        "name": "Super user",
+        "description": "This role provides all application permissions.",
+        "disabled": false
+      }
+    ],
+    "isSelfServiceUser": false
+  }
+]

@@ -1,0 +1,39 @@
+// ... SUCCESS
+Array
+(
+    [officeId] => 1
+    [loanId] => 6
+    [resourceId] => 1
+)
+
+
+// ... FAILURE
+Array
+(
+    [developerMessage] => The request was invalid. This typically will happen due to validation errors which are provided.
+    [httpStatusCode] => 400
+    [defaultUserMessage] => Validation errors exist.
+    [userMessageGlobalisationCode] => validation.msg.validation.errors.exist
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => The parameter entityId is mandatory.
+                    [defaultUserMessage] => The parameter entityId is mandatory.
+                    [userMessageGlobalisationCode] => validation.msg.Guarantor.entityId.cannot.be.blank
+                    [parameterName] => entityId
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

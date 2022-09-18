@@ -1,0 +1,94 @@
+SUCCESS MESSAGE
+------------------------------------------------------------------------------------------------------------
+{
+  "id": 10,
+  "accountNo": "KHSK000000010",
+  "externalId": "901123",
+  "status": {
+    "id": 300,
+    "code": "clientStatusType.active",
+    "value": "Active"
+  },
+  "subStatus": {
+    "isActive": false
+  },
+  "active": true,
+  "activationDate": [
+    2019,
+    4,
+    20
+  ],
+  "firstname": "Florence",
+  "lastname": "Namazzi",
+  "displayName": "Florence Namazzi",
+  "mobileNo": "256772613406",
+  "gender": {
+    "id": 14,
+    "name": "F",
+    "isActive": false
+  },
+  "clientType": {
+    "id": 23,
+    "name": "KHSK",
+    "isActive": false
+  },
+  "clientClassification": {
+    "id": 21,
+    "name": "Retail Member",
+    "isActive": false
+  },
+  "officeId": 1,
+  "officeName": "Western Office",
+  "timeline": {
+    "submittedOnDate": [
+      2019,
+      4,
+      20
+    ],
+    "submittedByUsername": "mifos",
+    "submittedByFirstname": "App",
+    "submittedByLastname": "Administrator",
+    "activatedOnDate": [
+      2019,
+      4,
+      20
+    ],
+    "activatedByUsername": "mifos",
+    "activatedByFirstname": "App",
+    "activatedByLastname": "Administrator"
+  },
+  "groups": [],
+  "clientNonPersonDetails": {
+    "constitution": {
+      "isActive": false
+    },
+    "mainBusinessLine": {
+      "isActive": false
+    }
+  }
+}
+
+
+
+
+
+
+FAILURE MESSAGE
+------------------------------------------------------------------------------------------------------------
+{
+	"developerMessage":"The requested resource is not available."
+	,"httpStatusCode":"404"
+	,"defaultUserMessage":"The requested resource is not available."
+	,"userMessageGlobalisationCode":"error.msg.resource.not.found"
+	,"errors":[
+		{"developerMessage":"Client with identifier 16 does not exist"
+		,"defaultUserMessage":"Client with identifier 16 does not exist"
+		,"userMessageGlobalisationCode":"error.msg.client.id.invalid"
+		,"parameterName":"id","value":null,
+		"args":[
+			{"value":16}
+			]
+		}
+	]
+}
+

@@ -1,0 +1,45 @@
+// ... SUCCESS
+Array
+(
+    [savingsId] => 4
+    [resourceId] => 6
+)
+
+
+
+
+// ... FAILURE
+Array
+(
+    [developerMessage] => The request was invalid. This typically will happen due to validation errors which are provided.
+    [httpStatusCode] => 400
+    [defaultUserMessage] => Validation errors exist.
+    [userMessageGlobalisationCode] => validation.msg.validation.errors.exist
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => The parameter transferAmount must be greater than 0.
+                    [defaultUserMessage] => The parameter transferAmount must be greater than 0.
+                    [userMessageGlobalisationCode] => validation.msg.accounttransfer.transferAmount.not.greater.than.zero
+                    [parameterName] => transferAmount
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 0
+                                )
+
+                            [1] => Array
+                                (
+                                    [value] => 0
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

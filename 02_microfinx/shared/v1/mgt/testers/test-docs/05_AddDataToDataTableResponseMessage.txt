@@ -1,0 +1,46 @@
+SUCCESS MESSAGE
+---------------------------------------------------------------------------------------------------------------------------
+Array
+(
+    [officeId] => 1
+    [clientId] => 2
+    [resourceId] => 2
+)
+
+FAILURE MESSAGE
+---------------------------------------------------------------------------------------------------------------------------
+Array
+(
+    [developerMessage] => The request caused a data integrity issue to be fired by the database.
+    [httpStatusCode] => 403
+    [defaultUserMessage] => An entry already exists for datatable `OtherDetails` and application table with identifier `2`.
+    [userMessageGlobalisationCode] => error.msg.datatable.entry.duplicate
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => An entry already exists for datatable `OtherDetails` and application table with identifier `2`.
+                    [defaultUserMessage] => An entry already exists for datatable `OtherDetails` and application table with identifier `2`.
+                    [userMessageGlobalisationCode] => error.msg.datatable.entry.duplicate
+                    [parameterName] => dataTableName
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => OtherDetails
+                                )
+
+                            [1] => Array
+                                (
+                                    [value] => 2
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+

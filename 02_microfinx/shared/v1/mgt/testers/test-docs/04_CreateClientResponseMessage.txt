@@ -1,0 +1,44 @@
+SUCCESS MESSAGE
+---------------------------------------------------------------------------------------------------------------------------
+Array
+(
+    [officeId] => 1
+    [clientId] => 7
+    [resourceId] => 7
+)
+
+
+
+FAILURE MESSAGE
+---------------------------------------------------------------------------------------------------------------------------
+Array
+(
+    [developerMessage] => The request caused a data integrity issue to be fired by the database.
+    [httpStatusCode] => 403
+    [defaultUserMessage] => Client with externalId `786YYH7YY` already exists
+    [userMessageGlobalisationCode] => error.msg.client.duplicate.externalId
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => Client with externalId `786YYH7YY` already exists
+                    [defaultUserMessage] => Client with externalId `786YYH7YY` already exists
+                    [userMessageGlobalisationCode] => error.msg.client.duplicate.externalId
+                    [parameterName] => externalId
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 786YYH7YY
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+

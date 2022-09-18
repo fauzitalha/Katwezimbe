@@ -1,0 +1,51 @@
+****************************************************  SUCCESSFUL RESPONSE  ****************************************************
+Array
+(
+    [username] => mifos
+    [userId] => 1
+    [base64EncodedAuthenticationKey] => bWlmb3M6cGFzc3dvcmQ=
+    [authenticated] => 1
+    [officeId] => 1
+    [officeName] => NANSANA SAVINGS
+    [roles] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [name] => Super user
+                    [description] => This role provides all application permissions.
+                    [disabled] => 
+                )
+
+        )
+
+    [permissions] => Array
+        (
+            [0] => CREATE_HOOK
+            [1] => APPROVE_RECURRINGDEPOSITACCOUNT_CHECKER
+            [2] => WITHDRAW_FIXEDDEPOSITACCOUNT
+            [3] => UPDATE_CHARTSLAB_CHECKER
+            [4] => ACTIVATE_HOLIDAY_CHECKER
+            [5] => WITHDRAWTRANSFER_CLIENT_CHECKER
+            [6] => APPROVE_SAVINGSACCOUNT_CHECKER
+            [7] => UPDATE_DATATABLE
+        )
+
+    [shouldRenewPassword] => 
+)
+
+
+
+****************************************************  FAILURE RESPONSE  ****************************************************
+Array
+(
+    [developerMessage] => Invalid authentication details were passed in api request.
+    [httpStatusCode] => 401
+    [defaultUserMessage] => Unauthenticated. Please login.
+    [userMessageGlobalisationCode] => error.msg.not.authenticated
+    [errors] => Array
+        (
+        )
+
+)
+

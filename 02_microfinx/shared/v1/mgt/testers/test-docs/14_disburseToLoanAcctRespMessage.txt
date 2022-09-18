@@ -1,0 +1,56 @@
+// ... success
+Array
+(
+    [officeId] => 1
+    [clientId] => 12
+    [loanId] => 6
+    [resourceId] => 6
+    [changes] => Array
+        (
+            [status] => Array
+                (
+                    [id] => 300
+                    [code] => loanStatusType.active
+                    [value] => Active
+                    [pendingApproval] => 
+                    [waitingForDisbursal] => 
+                    [active] => 1
+                    [closedObligationsMet] => 
+                    [closedWrittenOff] => 
+                    [closedRescheduled] => 
+                    [closed] => 
+                    [overpaid] => 
+                )
+
+            [locale] => en
+            [dateFormat] => dd MMMM yyyy
+            [actualDisbursementDate] => 23 June 2019
+        )
+
+)
+
+// ... failure
+Array
+(
+    [developerMessage] => The request was invalid. This typically will happen due to validation errors which are provided.
+    [httpStatusCode] => 400
+    [defaultUserMessage] => Validation errors exist.
+    [userMessageGlobalisationCode] => validation.msg.validation.errors.exist
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => Loan Disbursal is not allowed. Loan Account is not in approved and not disbursed state.
+                    [defaultUserMessage] => Loan Disbursal is not allowed. Loan Account is not in approved and not disbursed state.
+                    [userMessageGlobalisationCode] => error.msg.loan.disbursal.account.is.not.approve.not.disbursed.state
+                    [parameterName] => id
+                    [value] => 
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+)

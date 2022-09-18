@@ -1,0 +1,56 @@
+SELECT id
+      ,account_no
+      ,status_enum
+      ,display_name
+      ,external_id
+      ,activation_date	  
+FROM m_client;
+WHERE status_enum='300'
+ORDER BY display_name ASC;
+
++-----------------------------+--------------+------+-----+---------+----------------+
+| Field                       | Type         | Null | Key | Default | Extra          |
++-----------------------------+--------------+------+-----+---------+----------------+
+| id                          | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| account_no                  | varchar(20)  | NO   | UNI | NULL    |                |
+| external_id                 | varchar(100) | YES  | UNI | NULL    |                |
+| status_enum                 | int(5)       | NO   |     | 300     |                |
+| sub_status                  | int(11)      | YES  | MUL | NULL    |                |
+| activation_date             | date         | YES  |     | NULL    |                |
+| office_joining_date         | date         | YES  |     | NULL    |                |
+| office_id                   | bigint(20)   | NO   | MUL | NULL    |                |
+| transfer_to_office_id       | bigint(20)   | YES  | MUL | NULL    |                |
+| staff_id                    | bigint(20)   | YES  | MUL | NULL    |                |
+| firstname                   | varchar(50)  | YES  |     | NULL    |                |
+| middlename                  | varchar(50)  | YES  |     | NULL    |                |
+| lastname                    | varchar(50)  | YES  |     | NULL    |                |
+| fullname                    | varchar(100) | YES  |     | NULL    |                |
+| display_name                | varchar(100) | NO   |     | NULL    |                |
+| mobile_no                   | varchar(50)  | YES  | UNI | NULL    |                |
+| gender_cv_id                | int(11)      | YES  | MUL | NULL    |                |
+| date_of_birth               | date         | YES  |     | NULL    |                |
+| image_id                    | bigint(20)   | YES  | MUL | NULL    |                |
+| closure_reason_cv_id        | int(11)      | YES  | MUL | NULL    |                |
+| closedon_date               | date         | YES  |     | NULL    |                |
+| updated_by                  | bigint(20)   | YES  |     | NULL    |                |
+| updated_on                  | date         | YES  |     | NULL    |                |
+| submittedon_date            | date         | YES  |     | NULL    |                |
+| submittedon_userid          | bigint(20)   | YES  |     | NULL    |                |
+| activatedon_userid          | bigint(20)   | YES  |     | NULL    |                |
+| closedon_userid             | bigint(20)   | YES  |     | NULL    |                |
+| default_savings_product     | bigint(20)   | YES  | MUL | NULL    |                |
+| default_savings_account     | bigint(20)   | YES  | MUL | NULL    |                |
+| client_type_cv_id           | int(11)      | YES  | MUL | NULL    |                |
+| client_classification_cv_id | int(11)      | YES  | MUL | NULL    |                |
+| reject_reason_cv_id         | int(11)      | YES  | MUL | NULL    |                |
+| rejectedon_date             | date         | YES  |     | NULL    |                |
+| rejectedon_userid           | bigint(20)   | YES  |     | NULL    |                |
+| withdraw_reason_cv_id       | int(11)      | YES  | MUL | NULL    |                |
+| withdrawn_on_date           | date         | YES  |     | NULL    |                |
+| withdraw_on_userid          | bigint(20)   | YES  |     | NULL    |                |
+| reactivated_on_date         | date         | YES  |     | NULL    |                |
+| reactivated_on_userid       | bigint(20)   | YES  |     | NULL    |                |
+| legal_form_enum             | int(5)       | YES  |     | NULL    |                |
++-----------------------------+--------------+------+-----+---------+----------------+
+40 rows in set (0.00 sec)
+

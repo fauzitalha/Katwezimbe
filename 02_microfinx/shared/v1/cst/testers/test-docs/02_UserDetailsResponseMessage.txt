@@ -1,0 +1,94 @@
+****************************************************  SUCCESSFUL RESPONSE  ****************************************************
+Array
+(
+    [id] => 8
+    [username] => root
+    [officeId] => 1
+    [officeName] => NANSANA SAVINGS
+    [firstname] => root
+    [lastname] => root
+    [email] => root@wvi.org
+    [passwordNeverExpires] => 
+    [availableRoles] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 2
+                    [name] => loans manager
+                    [description] => role for the loans manager
+                    [disabled] => 
+                )
+
+            [1] => Array
+                (
+                    [id] => 3
+                    [name] => loans officer
+                    [description] => loans officer permissions
+                    [disabled] => 
+                )
+
+            [2] => Array
+                (
+                    [id] => 4
+                    [name] => teller
+                    [description] => teller role
+                    [disabled] => 
+                )
+
+            [3] => Array
+                (
+                    [id] => 5
+                    [name] => teller supervisor
+                    [description] => teller supervisor role
+                    [disabled] => 
+                )
+
+        )
+
+    [selectedRoles] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [name] => Super user
+                    [description] => This role provides all application permissions.
+                    [disabled] => 
+                )
+
+        )
+
+    [isSelfServiceUser] => 
+)
+
+
+****************************************************  FAILURE RESPONSE  ****************************************************
+Array
+(
+    [developerMessage] => The requested resource is not available.
+    [httpStatusCode] => 404
+    [defaultUserMessage] => The requested resource is not available.
+    [userMessageGlobalisationCode] => error.msg.resource.not.found
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => User with identifier 9 does not exist
+                    [defaultUserMessage] => User with identifier 9 does not exist
+                    [userMessageGlobalisationCode] => error.msg.user.id.invalid
+                    [parameterName] => id
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 9
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+

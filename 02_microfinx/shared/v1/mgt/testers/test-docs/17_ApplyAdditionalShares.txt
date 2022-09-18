@@ -1,0 +1,43 @@
+// ... SUCCESSFULL USER
+Array
+(
+    [resourceId] => 4
+    [changes] => Array
+        (
+            [additionalshares] => 7
+        )
+
+)
+
+
+
+// ... FAILURE
+Array
+(
+    [developerMessage] => The requested resource is not available.
+    [httpStatusCode] => 404
+    [defaultUserMessage] => The requested resource is not available.
+    [userMessageGlobalisationCode] => error.msg.resource.not.found
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] =>  Account with identifier 44 does not exist
+                    [defaultUserMessage] =>  Account with identifier 44 does not exist
+                    [userMessageGlobalisationCode] => error.msg.shareaccount.id.invalid
+                    [parameterName] => id
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 44
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

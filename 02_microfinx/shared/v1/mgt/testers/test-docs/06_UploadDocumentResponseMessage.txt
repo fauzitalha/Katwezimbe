@@ -1,0 +1,5 @@
+Array
+(
+    [resourceId] => 4
+    [resourceIdentifier] => 4
+)

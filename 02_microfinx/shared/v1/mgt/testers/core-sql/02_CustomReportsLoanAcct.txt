@@ -1,0 +1,198 @@
+mysql> desc m_loan;
+SELECT m_loan.id
+      ,m_loan.account_no
+      ,m_loan.currency_code
+	  ,m_loan.client_id
+	  ,m_loan.product_id
+	  ,m_product_loan.name
+	  ,m_product_loan.short_name
+	  ,m_loan.group_id 
+	  ,m_loan.loan_status_id
+FROM m_loan, m_product_loan
+WHERE m_loan.product_id=m_product_loan.id
+  AND m_loan.loan_status_id='300'
+  AND m_loan.client_id=${client_id}
+https://127.0.0.1:8443/fineract-provider/api/v1/runreports/GetCustLoansAccounts?R_client_id=7&tenantIdentifier=default&pretty=true
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| Field                                       | Type          | Null | Key | Default  | Extra          |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| id                                          | bigint(20)    | NO   | PRI | NULL     | auto_increment |
+| account_no                                  | varchar(20)   | NO   | UNI | NULL     |                |
+| external_id                                 | varchar(100)  | YES  | UNI | NULL     |                |
+| client_id                                   | bigint(20)    | YES  | MUL | NULL     |                |
+| group_id                                    | bigint(20)    | YES  | MUL | NULL     |                |
+| product_id                                  | bigint(20)    | YES  | MUL | NULL     |                |
+| fund_id                                     | bigint(20)    | YES  | MUL | NULL     |                |
+| loan_officer_id                             | bigint(20)    | YES  | MUL | NULL     |                |
+| loanpurpose_cv_id                           | int(11)       | YES  | MUL | NULL     |                |
+| loan_status_id                              | smallint(5)   | NO   |     | NULL     |                |
+| loan_type_enum                              | smallint(5)   | NO   |     | NULL     |                |
+| currency_code                               | varchar(3)    | NO   |     | NULL     |                |
+| currency_digits                             | smallint(5)   | NO   |     | NULL     |                |
+| currency_multiplesof                        | smallint(5)   | YES  |     | NULL     |                |
+| principal_amount_proposed                   | decimal(19,6) | NO   |     | NULL     |                |
+| principal_amount                            | decimal(19,6) | NO   |     | NULL     |                |
+| approved_principal                          | decimal(19,6) | NO   |     | NULL     |                |
+| arrearstolerance_amount                     | decimal(19,6) | YES  |     | NULL     |                |
+| is_floating_interest_rate                   | bit(1)        | YES  |     | b'0'     |                |
+| interest_rate_differential                  | decimal(19,6) | YES  |     | 0.000000 |                |
+| nominal_interest_rate_per_period            | decimal(19,6) | YES  |     | NULL     |                |
+| interest_period_frequency_enum              | smallint(5)   | YES  |     | NULL     |                |
+| annual_nominal_interest_rate                | decimal(19,6) | YES  |     | NULL     |                |
+| interest_method_enum                        | smallint(5)   | NO   |     | NULL     |                |
+| interest_calculated_in_period_enum          | smallint(5)   | NO   |     | 1        |                |
+| allow_partial_period_interest_calcualtion   | tinyint(1)    | NO   |     | 0        |                |
+| term_frequency                              | smallint(5)   | NO   |     | 0        |                |
+| term_period_frequency_enum                  | smallint(5)   | NO   |     | 2        |                |
+| repay_every                                 | smallint(5)   | NO   |     | NULL     |                |
+| repayment_period_frequency_enum             | smallint(5)   | NO   |     | NULL     |                |
+| number_of_repayments                        | smallint(5)   | NO   |     | NULL     |                |
+| grace_on_principal_periods                  | smallint(5)   | YES  |     | NULL     |                |
+| recurring_moratorium_principal_periods      | smallint(5)   | YES  |     | NULL     |                |
+| grace_on_interest_periods                   | smallint(5)   | YES  |     | NULL     |                |
+| grace_interest_free_periods                 | smallint(5)   | YES  |     | NULL     |                |
+| amortization_method_enum                    | smallint(5)   | NO   |     | NULL     |                |
+| submittedon_date                            | date          | YES  |     | NULL     |                |
+| submittedon_userid                          | bigint(20)    | YES  | MUL | NULL     |                |
+| approvedon_date                             | date          | YES  |     | NULL     |                |
+| approvedon_userid                           | bigint(20)    | YES  | MUL | NULL     |                |
+| expected_disbursedon_date                   | date          | YES  |     | NULL     |                |
+| expected_firstrepaymenton_date              | date          | YES  |     | NULL     |                |
+| interest_calculated_from_date               | date          | YES  |     | NULL     |                |
+| disbursedon_date                            | date          | YES  |     | NULL     |                |
+| disbursedon_userid                          | bigint(20)    | YES  | MUL | NULL     |                |
+| expected_maturedon_date                     | date          | YES  |     | NULL     |                |
+| maturedon_date                              | date          | YES  |     | NULL     |                |
+| closedon_date                               | date          | YES  |     | NULL     |                |
+| closedon_userid                             | bigint(20)    | YES  | MUL | NULL     |                |
+| total_charges_due_at_disbursement_derived   | decimal(19,6) | YES  |     | NULL     |                |
+| principal_disbursed_derived                 | decimal(19,6) | NO   |     | 0.000000 |                |
+| principal_repaid_derived                    | decimal(19,6) | NO   |     | 0.000000 |                |
+| principal_writtenoff_derived                | decimal(19,6) | NO   |     | 0.000000 |                |
+| principal_outstanding_derived               | decimal(19,6) | NO   |     | 0.000000 |                |
+| interest_charged_derived                    | decimal(19,6) | NO   |     | 0.000000 |                |
+| interest_repaid_derived                     | decimal(19,6) | NO   |     | 0.000000 |                |
+| interest_waived_derived                     | decimal(19,6) | NO   |     | 0.000000 |                |
+| interest_writtenoff_derived                 | decimal(19,6) | NO   |     | 0.000000 |                |
+| interest_outstanding_derived                | decimal(19,6) | NO   |     | 0.000000 |                |
+| fee_charges_charged_derived                 | decimal(19,6) | NO   |     | 0.000000 |                |
+| fee_charges_repaid_derived                  | decimal(19,6) | NO   |     | 0.000000 |                |
+| fee_charges_waived_derived                  | decimal(19,6) | NO   |     | 0.000000 |                |
+| fee_charges_writtenoff_derived              | decimal(19,6) | NO   |     | 0.000000 |                |
+| fee_charges_outstanding_derived             | decimal(19,6) | NO   |     | 0.000000 |                |
+| penalty_charges_charged_derived             | decimal(19,6) | NO   |     | 0.000000 |                |
+| penalty_charges_repaid_derived              | decimal(19,6) | NO   |     | 0.000000 |                |
+| penalty_charges_waived_derived              | decimal(19,6) | NO   |     | 0.000000 |                |
+| penalty_charges_writtenoff_derived          | decimal(19,6) | NO   |     | 0.000000 |                |
+| penalty_charges_outstanding_derived         | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_expected_repayment_derived            | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_repayment_derived                     | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_expected_costofloan_derived           | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_costofloan_derived                    | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_waived_derived                        | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_writtenoff_derived                    | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_outstanding_derived                   | decimal(19,6) | NO   |     | 0.000000 |                |
+| total_overpaid_derived                      | decimal(19,6) | YES  |     | NULL     |                |
+| rejectedon_date                             | date          | YES  |     | NULL     |                |
+| rejectedon_userid                           | bigint(20)    | YES  | MUL | NULL     |                |
+| rescheduledon_date                          | date          | YES  |     | NULL     |                |
+| rescheduledon_userid                        | bigint(20)    | YES  |     | NULL     |                |
+| withdrawnon_date                            | date          | YES  |     | NULL     |                |
+| withdrawnon_userid                          | bigint(20)    | YES  | MUL | NULL     |                |
+| writtenoffon_date                           | date          | YES  |     | NULL     |                |
+| loan_transaction_strategy_id                | bigint(20)    | YES  | MUL | NULL     |                |
+| sync_disbursement_with_meeting              | tinyint(1)    | YES  |     | NULL     |                |
+| loan_counter                                | smallint(6)   | YES  |     | NULL     |                |
+| loan_product_counter                        | smallint(6)   | YES  |     | NULL     |                |
+| fixed_emi_amount                            | decimal(19,6) | YES  |     | NULL     |                |
+| max_outstanding_loan_balance                | decimal(19,6) | YES  |     | NULL     |                |
+| grace_on_arrears_ageing                     | smallint(5)   | YES  |     | NULL     |                |
+| is_npa                                      | tinyint(1)    | NO   |     | 0        |                |
+| total_recovered_derived                     | decimal(19,6) | YES  |     | NULL     |                |
+| accrued_till                                | date          | YES  |     | NULL     |                |
+| interest_recalcualated_on                   | date          | YES  |     | NULL     |                |
+| days_in_month_enum                          | smallint(5)   | NO   |     | 1        |                |
+| days_in_year_enum                           | smallint(5)   | NO   |     | 1        |                |
+| interest_recalculation_enabled              | tinyint(4)    | NO   |     | 0        |                |
+| guarantee_amount_derived                    | decimal(19,6) | YES  |     | NULL     |                |
+| create_standing_instruction_at_disbursement | tinyint(1)    | YES  |     | NULL     |                |
+| version                                     | int(15)       | NO   |     | 1        |                |
+| writeoff_reason_cv_id                       | int(11)       | YES  | MUL | NULL     |                |
+| loan_sub_status_id                          | smallint(5)   | YES  |     | NULL     |                |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+103 rows in set (0.01 sec)
+
+
+mysql> desc m_product_loan;
++-----------------------------------------------------+---------------+------+-----+---------+----------------+
+| Field                                               | Type          | Null | Key | Default | Extra          |
++-----------------------------------------------------+---------------+------+-----+---------+----------------+
+| id                                                  | bigint(20)    | NO   | PRI | NULL    | auto_increment |
+| short_name                                          | varchar(4)    | NO   | UNI | NULL    |                |
+| currency_code                                       | varchar(3)    | NO   |     | NULL    |                |
+| currency_digits                                     | smallint(5)   | NO   |     | NULL    |                |
+| currency_multiplesof                                | smallint(5)   | YES  |     | NULL    |                |
+| principal_amount                                    | decimal(19,6) | YES  |     | NULL    |                |
+| min_principal_amount                                | decimal(19,6) | YES  |     | NULL    |                |
+| max_principal_amount                                | decimal(19,6) | YES  |     | NULL    |                |
+| arrearstolerance_amount                             | decimal(19,6) | YES  |     | NULL    |                |
+| name                                                | varchar(100)  | NO   | UNI | NULL    |                |
+| description                                         | varchar(500)  | YES  |     | NULL    |                |
+| fund_id                                             | bigint(20)    | YES  | MUL | NULL    |                |
+| is_linked_to_floating_interest_rates                | bit(1)        | NO   |     | b'0'    |                |
+| allow_variabe_installments                          | bit(1)        | NO   |     | b'0'    |                |
+| nominal_interest_rate_per_period                    | decimal(19,6) | YES  |     | NULL    |                |
+| min_nominal_interest_rate_per_period                | decimal(19,6) | YES  |     | NULL    |                |
+| max_nominal_interest_rate_per_period                | decimal(19,6) | YES  |     | NULL    |                |
+| interest_period_frequency_enum                      | smallint(5)   | YES  |     | NULL    |                |
+| annual_nominal_interest_rate                        | decimal(19,6) | YES  |     | NULL    |                |
+| interest_method_enum                                | smallint(5)   | NO   |     | NULL    |                |
+| interest_calculated_in_period_enum                  | smallint(5)   | NO   |     | 1       |                |
+| allow_partial_period_interest_calcualtion           | tinyint(1)    | NO   |     | 0       |                |
+| repay_every                                         | smallint(5)   | NO   |     | NULL    |                |
+| repayment_period_frequency_enum                     | smallint(5)   | NO   |     | NULL    |                |
+| number_of_repayments                                | smallint(5)   | NO   |     | NULL    |                |
+| min_number_of_repayments                            | smallint(5)   | YES  |     | NULL    |                |
+| max_number_of_repayments                            | smallint(5)   | YES  |     | NULL    |                |
+| grace_on_principal_periods                          | smallint(5)   | YES  |     | NULL    |                |
+| recurring_moratorium_principal_periods              | smallint(5)   | YES  |     | NULL    |                |
+| grace_on_interest_periods                           | smallint(5)   | YES  |     | NULL    |                |
+| grace_interest_free_periods                         | smallint(5)   | YES  |     | NULL    |                |
+| amortization_method_enum                            | smallint(5)   | NO   |     | NULL    |                |
+| accounting_type                                     | smallint(5)   | NO   |     | NULL    |                |
+| loan_transaction_strategy_id                        | bigint(20)    | YES  | MUL | NULL    |                |
+| external_id                                         | varchar(100)  | YES  | UNI | NULL    |                |
+| include_in_borrower_cycle                           | tinyint(1)    | NO   |     | 0       |                |
+| use_borrower_cycle                                  | tinyint(1)    | NO   |     | 0       |                |
+| start_date                                          | date          | YES  |     | NULL    |                |
+| close_date                                          | date          | YES  |     | NULL    |                |
+| allow_multiple_disbursals                           | tinyint(1)    | NO   |     | 0       |                |
+| max_disbursals                                      | int(2)        | YES  |     | NULL    |                |
+| max_outstanding_loan_balance                        | decimal(19,6) | YES  |     | NULL    |                |
+| grace_on_arrears_ageing                             | smallint(5)   | YES  |     | NULL    |                |
+| overdue_days_for_npa                                | smallint(5)   | YES  |     | NULL    |                |
+| days_in_month_enum                                  | smallint(5)   | NO   |     | 1       |                |
+| days_in_year_enum                                   | smallint(5)   | NO   |     | 1       |                |
+| interest_recalculation_enabled                      | tinyint(4)    | NO   |     | 0       |                |
+| min_days_between_disbursal_and_first_repayment      | int(3)        | YES  |     | NULL    |                |
+| hold_guarantee_funds                                | tinyint(1)    | NO   |     | 0       |                |
+| principal_threshold_for_last_installment            | decimal(5,2)  | NO   |     | 50.00   |                |
+| account_moves_out_of_npa_only_on_arrears_completion | tinyint(1)    | NO   |     | 0       |                |
+| can_define_fixed_emi_amount                         | tinyint(1)    | NO   |     | 0       |                |
+| instalment_amount_in_multiples_of                   | decimal(19,6) | YES  |     | NULL    |                |
++-----------------------------------------------------+---------------+------+-----+---------+----------------+
+53 rows in set (0.00 sec)
+
+
+mysql> desc r_enum_value;
++-----------------------+--------------+------+-----+---------+-------+
+| Field                 | Type         | Null | Key | Default | Extra |
++-----------------------+--------------+------+-----+---------+-------+
+| enum_name             | varchar(100) | NO   | PRI | NULL    |       |
+| enum_id               | int(11)      | NO   | PRI | NULL    |       |
+| enum_message_property | varchar(100) | NO   |     | NULL    |       |
+| enum_value            | varchar(100) | NO   |     | NULL    |       |
+| enum_type             | tinyint(1)   | NO   |     | NULL    |       |
++-----------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+

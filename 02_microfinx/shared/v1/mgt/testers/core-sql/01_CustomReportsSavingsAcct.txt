@@ -1,0 +1,137 @@
+mysql> desc m_savings_account;
+SELECT m_savings_account.id
+      ,m_savings_account.account_no
+      ,m_savings_account.currency_code
+	  ,m_savings_account.client_id
+	  ,m_savings_account.product_id
+	  ,m_savings_product.name
+	  ,m_savings_product.short_name
+	  ,m_savings_account.group_id 
+	  ,m_savings_account.status_enum
+FROM m_savings_account, m_savings_product
+WHERE m_savings_account.product_id=m_savings_product.id
+  AND m_savings_account.status_enum='300'
+  AND m_savings_account.client_id=${client_id}
+
+https://127.0.0.1:8443/fineract-provider/api/v1/runreports/GetCustSavingsAccounts?R_client_id=9&tenantIdentifier=default&pretty=true
+
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| Field                                       | Type          | Null | Key | Default  | Extra          |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| id                                          | bigint(20)    | NO   | PRI | NULL     | auto_increment |
+| account_no                                  | varchar(20)   | NO   | UNI | NULL     |                |
+| external_id                                 | varchar(100)  | YES  | UNI | NULL     |                |
+| client_id                                   | bigint(20)    | YES  | MUL | NULL     |                |
+| group_id                                    | bigint(20)    | YES  | MUL | NULL     |                |
+| product_id                                  | bigint(20)    | YES  | MUL | NULL     |                |
+| field_officer_id                            | bigint(20)    | YES  |     | NULL     |                |
+| status_enum                                 | smallint(5)   | NO   |     | 300      |                |
+| sub_status_enum                             | smallint(5)   | NO   |     | 0        |                |
+| account_type_enum                           | smallint(5)   | NO   |     | 1        |                |
+| deposit_type_enum                           | smallint(5)   | NO   |     | 100      |                |
+| submittedon_date                            | date          | NO   |     | NULL     |                |
+| submittedon_userid                          | bigint(20)    | YES  |     | NULL     |                |
+| approvedon_date                             | date          | YES  |     | NULL     |                |
+| approvedon_userid                           | bigint(20)    | YES  |     | NULL     |                |
+| rejectedon_date                             | date          | YES  |     | NULL     |                |
+| rejectedon_userid                           | bigint(20)    | YES  |     | NULL     |                |
+| withdrawnon_date                            | date          | YES  |     | NULL     |                |
+| withdrawnon_userid                          | bigint(20)    | YES  |     | NULL     |                |
+| activatedon_date                            | date          | YES  |     | NULL     |                |
+| activatedon_userid                          | bigint(20)    | YES  |     | NULL     |                |
+| closedon_date                               | date          | YES  |     | NULL     |                |
+| closedon_userid                             | bigint(20)    | YES  |     | NULL     |                |
+| currency_code                               | varchar(3)    | NO   |     | NULL     |                |
+| currency_digits                             | smallint(5)   | NO   |     | NULL     |                |
+| currency_multiplesof                        | smallint(5)   | YES  |     | NULL     |                |
+| nominal_annual_interest_rate                | decimal(19,6) | NO   |     | NULL     |                |
+| interest_compounding_period_enum            | smallint(5)   | NO   |     | NULL     |                |
+| interest_posting_period_enum                | smallint(5)   | NO   |     | 4        |                |
+| interest_calculation_type_enum              | smallint(5)   | NO   |     | NULL     |                |
+| interest_calculation_days_in_year_type_enum | smallint(5)   | NO   |     | NULL     |                |
+| min_required_opening_balance                | decimal(19,6) | YES  |     | NULL     |                |
+| lockin_period_frequency                     | decimal(19,6) | YES  |     | NULL     |                |
+| lockin_period_frequency_enum                | smallint(5)   | YES  |     | NULL     |                |
+| withdrawal_fee_for_transfer                 | tinyint(4)    | YES  |     | 1        |                |
+| allow_overdraft                             | tinyint(1)    | NO   |     | 0        |                |
+| overdraft_limit                             | decimal(19,6) | YES  |     | NULL     |                |
+| nominal_annual_interest_rate_overdraft      | decimal(19,6) | YES  |     | 0.000000 |                |
+| min_overdraft_for_interest_calculation      | decimal(19,6) | YES  |     | 0.000000 |                |
+| lockedin_until_date_derived                 | date          | YES  |     | NULL     |                |
+| total_deposits_derived                      | decimal(19,6) | YES  |     | NULL     |                |
+| total_withdrawals_derived                   | decimal(19,6) | YES  |     | NULL     |                |
+| total_withdrawal_fees_derived               | decimal(19,6) | YES  |     | NULL     |                |
+| total_fees_charge_derived                   | decimal(19,6) | YES  |     | NULL     |                |
+| total_penalty_charge_derived                | decimal(19,6) | YES  |     | NULL     |                |
+| total_annual_fees_derived                   | decimal(19,6) | YES  |     | NULL     |                |
+| total_interest_earned_derived               | decimal(19,6) | YES  |     | NULL     |                |
+| total_interest_posted_derived               | decimal(19,6) | YES  |     | NULL     |                |
+| total_overdraft_interest_derived            | decimal(19,6) | YES  |     | 0.000000 |                |
+| total_withhold_tax_derived                  | decimal(19,6) | YES  |     | NULL     |                |
+| account_balance_derived                     | decimal(19,6) | NO   |     | 0.000000 |                |
+| min_required_balance                        | decimal(19,6) | YES  |     | NULL     |                |
+| enforce_min_required_balance                | tinyint(1)    | NO   |     | 0        |                |
+| min_balance_for_interest_calculation        | decimal(19,6) | YES  |     | NULL     |                |
+| start_interest_calculation_date             | date          | YES  |     | NULL     |                |
+| on_hold_funds_derived                       | decimal(19,6) | YES  |     | NULL     |                |
+| version                                     | int(15)       | NO   |     | 1        |                |
+| withhold_tax                                | tinyint(4)    | NO   |     | 0        |                |
+| tax_group_id                                | bigint(20)    | YES  | MUL | NULL     |                |
+| last_interest_calculation_date              | date          | YES  |     | NULL     |                |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+60 rows in set (0.00 sec)
+
+
+mysql> desc m_savings_product;
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| Field                                       | Type          | Null | Key | Default  | Extra          |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+| id                                          | bigint(20)    | NO   | PRI | NULL     | auto_increment |
+| name                                        | varchar(100)  | NO   | UNI | NULL     |                |
+| short_name                                  | varchar(4)    | NO   | UNI | NULL     |                |
+| description                                 | varchar(500)  | NO   |     | NULL     |                |
+| deposit_type_enum                           | smallint(5)   | NO   |     | 100      |                |
+| currency_code                               | varchar(3)    | NO   |     | NULL     |                |
+| currency_digits                             | smallint(5)   | NO   |     | NULL     |                |
+| currency_multiplesof                        | smallint(5)   | YES  |     | NULL     |                |
+| nominal_annual_interest_rate                | decimal(19,6) | NO   |     | NULL     |                |
+| interest_compounding_period_enum            | smallint(5)   | NO   |     | NULL     |                |
+| interest_posting_period_enum                | smallint(5)   | NO   |     | 4        |                |
+| interest_calculation_type_enum              | smallint(5)   | NO   |     | NULL     |                |
+| interest_calculation_days_in_year_type_enum | smallint(5)   | NO   |     | NULL     |                |
+| min_required_opening_balance                | decimal(19,6) | YES  |     | NULL     |                |
+| lockin_period_frequency                     | decimal(19,6) | YES  |     | NULL     |                |
+| lockin_period_frequency_enum                | smallint(5)   | YES  |     | NULL     |                |
+| accounting_type                             | smallint(5)   | NO   |     | NULL     |                |
+| withdrawal_fee_amount                       | decimal(19,6) | YES  |     | NULL     |                |
+| withdrawal_fee_type_enum                    | smallint(5)   | YES  |     | NULL     |                |
+| withdrawal_fee_for_transfer                 | tinyint(4)    | YES  |     | 1        |                |
+| allow_overdraft                             | tinyint(1)    | NO   |     | 0        |                |
+| overdraft_limit                             | decimal(19,6) | YES  |     | NULL     |                |
+| nominal_annual_interest_rate_overdraft      | decimal(19,6) | YES  |     | 0.000000 |                |
+| min_overdraft_for_interest_calculation      | decimal(19,6) | YES  |     | 0.000000 |                |
+| min_required_balance                        | decimal(19,6) | YES  |     | NULL     |                |
+| enforce_min_required_balance                | tinyint(1)    | NO   |     | 0        |                |
+| min_balance_for_interest_calculation        | decimal(19,6) | YES  |     | NULL     |                |
+| withhold_tax                                | tinyint(4)    | NO   |     | 0        |                |
+| tax_group_id                                | bigint(20)    | YES  | MUL | NULL     |                |
+| is_dormancy_tracking_active                 | smallint(1)   | YES  |     | NULL     |                |
+| days_to_inactive                            | int(11)       | YES  |     | NULL     |                |
+| days_to_dormancy                            | int(11)       | YES  |     | NULL     |                |
+| days_to_escheat                             | int(11)       | YES  |     | NULL     |                |
++---------------------------------------------+---------------+------+-----+----------+----------------+
+33 rows in set (0.00 sec)
+
+
+mysql> desc r_enum_value;
++-----------------------+--------------+------+-----+---------+-------+
+| Field                 | Type         | Null | Key | Default | Extra |
++-----------------------+--------------+------+-----+---------+-------+
+| enum_name             | varchar(100) | NO   | PRI | NULL    |       |
+| enum_id               | int(11)      | NO   | PRI | NULL    |       |
+| enum_message_property | varchar(100) | NO   |     | NULL    |       |
+| enum_value            | varchar(100) | NO   |     | NULL    |       |
+| enum_type             | tinyint(1)   | NO   |     | NULL    |       |
++-----------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+

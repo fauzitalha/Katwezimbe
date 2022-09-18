@@ -1,0 +1,43 @@
+SUCCESS MESSAGE
+===============================================================================
+Array
+(
+    [officeId] => 1
+    [clientId] => 1
+    [savingsId] => 3
+    [resourceId] => 3
+)
+
+
+
+FAILURE MESSAGE
+===============================================================================
+Array
+(
+    [developerMessage] => The requested resource is not available.
+    [httpStatusCode] => 404
+    [defaultUserMessage] => The requested resource is not available.
+    [userMessageGlobalisationCode] => error.msg.resource.not.found
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => Saving product with identifier 3 does not exist
+                    [defaultUserMessage] => Saving product with identifier 3 does not exist
+                    [userMessageGlobalisationCode] => error.msg.savingproduct.id.invalid
+                    [parameterName] => id
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 3
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

@@ -1,0 +1,52 @@
+// ... SUCCESS
+Array
+(
+    [officeId] => 1
+    [clientId] => 12
+    [loanId] => 6
+    [resourceId] => 6
+)
+
+
+
+
+// ... ERROR
+Array
+(
+    [developerMessage] => The request was invalid. This typically will happen due to validation errors which are provided.
+    [httpStatusCode] => 400
+    [defaultUserMessage] => Validation errors exist.
+    [userMessageGlobalisationCode] => validation.msg.validation.errors.exist
+    [errors] => Array
+        (
+            [0] => Array
+                (
+                    [developerMessage] => The principal amount 40000.0 must be between 4000000.00 and 15000000.00 .
+                    [defaultUserMessage] => The principal amount 40000.0 must be between 4000000.00 and 15000000.00 .
+                    [userMessageGlobalisationCode] => validation.msg.loan.principal.amount.is.not.within.min.max.range
+                    [parameterName] => principal
+                    [value] => 
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [value] => 40000
+                                )
+
+                            [1] => Array
+                                (
+                                    [value] => 4000000
+                                )
+
+                            [2] => Array
+                                (
+                                    [value] => 15000000
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
