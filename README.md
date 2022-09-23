@@ -23,7 +23,7 @@ https://kstaff.slankinit.com/<br>
 
 
 
-# STAGE 02: Katwezimbe (Integration)
+# STAGE 02: Katwezimbe (MTN Open API Integration)
 Katwezimbe is connected to the MTN-Open-API for collecting and disbursement of funds among groups and individuals.<br>
 This is how we integrated to the API
 1. We built a tokenizer service to simply update tokens every after 45 minutes. This service works for the Collections and Disbursment productions of the API. <br>
