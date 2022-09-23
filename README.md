@@ -1,4 +1,4 @@
-# Katwezimbe
+# STAGE 01: Katwezimbe (Demonstration)
 
 
 Demonstration Links
@@ -20,3 +20,21 @@ https://kstaff.slankinit.com/<br>
 <b>TEST STAFF USER:</b> mathew.kasozi<br>
 <b>TEST STAFF PASS:</b> mathew.kasozi<br>
 <br>
+
+
+
+# STAGE 02: Katwezimbe (Integration)
+Katwezimbe is connected to the MTN-Open-API for collecting and disbursement of funds among groups and individuals.<br>
+This is how we integrated to the API
+1. We built a tokenizer service to simply update tokens every after 45 minutes. This service works for the Collections and Disbursment productions of the API. <br>
+2. We also split the various methods from the APIs into Micro-Services to allow for scalability and easy of support and maintenance <br>
+3. So for every Collection request originating from our System to API, we use an already existing valid access token to speed up request processing.<br>
+4. For disbursement, the same applies as explained in #4.
+
+
+
+
+
+
+
+
