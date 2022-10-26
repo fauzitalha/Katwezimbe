@@ -14,7 +14,7 @@ https://play.google.com/store/apps/details?id=com.slankinit.Mavuno<br>
 <b>CUSTOMER PORTAL</b><br>
 https://katwezimbe.slankinit.com/<br>
 <b>TEST CUST USER:</b> fauzi<br>
-<b>TEST CUST PASS:</b> Fauzi@7727<br> 
+<b>TEST CUST PASS:</b> Snape@7727<br> 
 
 <br>
 <b>STAFF PORTAL</b><br>
