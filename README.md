@@ -19,9 +19,23 @@ https://katwezimbe.slankinit.com/<br>
 <br>
 <b>STAFF PORTAL</b><br>
 https://kstaff.slankinit.com/<br>
+<br>
+<b>USER 01</b><br>
 <b>TEST STAFF USER:</b> mathew.kasozi<br>
 <b>TEST STAFF PASS:</b> mathew.kasozi<br>
 <br>
+<br>
+<b>USER 02</b><br>
+<b>USER:</b> robert.sebunnya<br>
+<b>PASS:</b> Thelordisgood<br>
+<br>
+<br>
+<b>USER 03</b><br>
+<b>USER:</b> ahmed.nvule<br>
+<b>PASS:</b> Thelordisgood<br>
+<br>
+<br>
+
 
 
 # SECTION 03: Katwezimbe (MTN Open API Integration)
